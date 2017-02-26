@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import RegisterForm from '../../components/RegisterForm'
 
 class Register extends Component {
+  onSave(user) {
+    console.log("let's register")
+    console.log(user)
+  }
+
   render() {
     return (
-      <div>So you want to register?</div>
+      <RegisterForm onSave={this.onSave.bind(this)} />
     )
   }
 }
