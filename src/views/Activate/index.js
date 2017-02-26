@@ -1,24 +1,27 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 import Relay from 'react-relay'
 import Snackbar from 'material-ui/Snackbar'
 
-import RegisterForm from '../../components/RegisterForm'
-import RegsiterUser from '../../mutations/RegisterUser'
+import ActivateUser from '../../mutations/ActivateUser'
 
-class Register extends Component {
+class Activate extends Component {
 
   constructor(props) {
     super(props)
     this.state = {snackbarOpen: false}
   }
 
-  onSave(user) {
+  componentDidMount() {
+    console.log(this.props.location.query)
     Relay.Store.commitUpdate(
-      new RegsiterUser(user), 
-
+      new ActivateUser(this.props.location.query),
       {
         onSuccess: () => {
           this.setState({snackbarOpen: true})
+          setTimeout(() => {
+            this.props.router.push('/login')
+          }, 4100)
         },
         onFailure: (transaction) => console.log(transaction)
       }
@@ -28,15 +31,15 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <RegisterForm onSave={this.onSave.bind(this)} />
+        <p>Activating your account...</p>
         <Snackbar
           open={this.state.snackbarOpen}
-          message="Registration successfull!"
+          message="Your account is active!"
           autoHideDuration={4000}
         />
-      </div>
+        </div>
     )
   }
 }
 
-export default Register
+export default withRouter(Activate)

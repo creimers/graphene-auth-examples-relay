@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
-import {withRouter} from 'react-router'
+import { withRouter } from 'react-router'
 import './App.css';
 
 class App extends Component {

@@ -8,6 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import App from './components/App';
 import Home from './components/Home'
+import Activate from './views/Activate'
 import Register from './views/register'
 import Login from './views/login'
 import './index.css';
@@ -31,6 +32,7 @@ ReactDOM.render(
       <Route path="/" component={App} queryies={ViewerQueries} >
         <IndexRoute component={Home} />
 				<Route path="register" component={Register} />
+				<Route path="activate" component={Activate} />
 				<Route path="login" component={Login} />
       </Route>
     </Router>
