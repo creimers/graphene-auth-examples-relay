@@ -9,7 +9,8 @@ class RegisterForm extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      password_repeat: ''
     }
   }
 
@@ -40,6 +41,14 @@ class RegisterForm extends Component {
             floatingLabelText="Password"
             value={this.state.password}
             onChange={this.handleChange.bind(this, 'password')}
+          />
+        </div>
+        <div>
+          <TextField
+            type="password"
+            floatingLabelText="Password Repeat"
+            value={this.state.password_repeat}
+            onChange={this.handleChange.bind(this, 'password_repeat')}
           />
         </div>
         <div>
