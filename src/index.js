@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import App from './components/App';
 import Home from './components/Home'
 import Register from './views/register'
+import Login from './views/login'
 import './index.css';
 
 injectTapEventPlugin()
@@ -30,6 +31,7 @@ ReactDOM.render(
       <Route path="/" component={App} queryies={ViewerQueries} >
         <IndexRoute component={Home} />
 				<Route path="register" component={Register} />
+				<Route path="login" component={Login} />
       </Route>
     </Router>
   </MuiThemeProvider>
