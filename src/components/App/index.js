@@ -31,6 +31,7 @@ class App extends Component {
           <MenuItem onTouchTap={() => this.navigate('/')} >Home</MenuItem>
           <MenuItem onTouchTap={() => this.navigate('/register')} >Register</MenuItem>
           <MenuItem onTouchTap={() => this.navigate('/login')} >Login</MenuItem>
+          <MenuItem onTouchTap={() => this.navigate('/profile')} >Profile</MenuItem>
         </Drawer>
         <main>
           {this.props.children}
