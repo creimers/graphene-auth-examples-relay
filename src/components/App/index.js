@@ -40,4 +40,6 @@ class App extends Component {
   }
 }
 
+// https://github.com/ReactTraining/react-router/blob/master/docs/API.md#onenternextstate-replace-callback
+
 export default withRouter(App)

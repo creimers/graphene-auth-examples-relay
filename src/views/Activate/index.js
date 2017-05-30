@@ -21,7 +21,7 @@ class Activate extends Component {
           this.setState({snackbarOpen: true})
           setTimeout(() => {
             this.props.router.push('/login')
-          }, 4100)
+          }, 3000)
         },
         onFailure: (transaction) => console.log(transaction)
       }
@@ -35,7 +35,7 @@ class Activate extends Component {
         <Snackbar
           open={this.state.snackbarOpen}
           message="Your account is active!"
-          autoHideDuration={4000}
+          autoHideDuration={2500}
         />
         </div>
     )

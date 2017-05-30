@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
 import Relay from 'react-relay'
 
 import LoginForm from '../../components/LoginForm'
@@ -7,12 +8,16 @@ import LoginUser from '../../mutations/LoginUser'
 class Login extends Component {
 
   handleLogin(user) {
-    console.log('user: ', user)
     Relay.Store.commitUpdate(
       new LoginUser(user),
       {
         onSuccess: (resp) => {
-          console.log('login success: ', resp)
+          localStorage.setItem('token', resp.login.token)
+          let errors = resp.login.errors
+          if (!errors) {
+            // redirect to profile
+            this.props.router.push('/profile')
+          }
         },
         onFailure: (transaction) => console.log(transaction)
       }
@@ -28,4 +33,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default withRouter(Login)

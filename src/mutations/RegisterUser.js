@@ -28,6 +28,15 @@ class RegisterUser extends Relay.Mutation {
       fieldIDs: {}
     }]
   }
+
+  // static fragments = {
+    // viewer: () => Relay.QL`
+      // fragment on viewer {
+        // id
+      // }
+    // `,
+  // }
+
 }
 
 export default RegisterUser
