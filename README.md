@@ -7,4 +7,5 @@ The app can
 * register a new user
 * confirm the user's registration
 * login a user
+* logout a user
 * display a user's profile 
